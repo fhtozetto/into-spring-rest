@@ -45,8 +45,9 @@ public class CursoServiceImpl implements CursoService{
 
 	@Override
 	public Curso updateDataInicio(Long id, Date dataInicio) {
-		// TODO Auto-generated method stub
-		return null;
+		Curso curso = dao.findById(id);
+		curso.setDataInicio(dataInicio);
+		return curso;
 	}
 
 
