@@ -1,5 +1,7 @@
 package br.com.lph.domain;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum CargaHoraria {
 	VINTE_HORAS("20HS"),
     TRINTA_HORAS("30HS"),
@@ -12,8 +14,8 @@ public enum CargaHoraria {
         this.horas = horas;
     }
   
+    @JsonValue
     public String getHoras() {
         return horas;
     }
-
 }

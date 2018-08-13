@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Entity
 @Table(name = "cursos",
@@ -30,6 +32,7 @@ public class Curso implements Serializable {
     @Enumerated(EnumType.STRING) // obrigatório por ser um campo enum
     private CargaHoraria cargaHoraria;
   
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "data_inicio")
     private Date dataInicio;
 
