@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -28,6 +29,13 @@ import br.com.lph.service.CursoService;
 public class CursoRestController {
 	@Autowired
 	private CursoService service;
+	
+	@PutMapping("/{id}")
+	@ResponseStatus(HttpStatus.OK)
+	private Curso editar(@PathVariable("id") Long id, @RequestBody Curso curso) {
+		service.update(id, curso);
+		return curso;
+	}
 	
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
