@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -29,6 +30,11 @@ import br.com.lph.service.CursoService;
 public class CursoRestController {
 	@Autowired
 	private CursoService service;
+	
+	@PatchMapping("/{id}")
+	private Curso editarDataInicio(@PathVariable("id") Long id, @RequestBody Curso curso) {
+		return service.updateDataInicio(id, curso.getDataInicio());
+	}
 	
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)

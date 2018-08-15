@@ -6,3 +6,12 @@
 0:0:0:0:0:0:0:1 - - [14/Aug/2018:19:16:01 -0300] "PUT /rest/cursos/1 HTTP/1.1" 415 1048 http-bio-9090-exec-5 15
 0:0:0:0:0:0:0:1 - - [14/Aug/2018:19:16:27 -0300] "PUT /rest/cursos/1 HTTP/1.1" 200 94 http-bio-9090-exec-6 160
 0:0:0:0:0:0:0:1 - - [14/Aug/2018:19:16:33 -0300] "GET /rest/cursos HTTP/1.1" 200 606 http-bio-9090-exec-7 18
+0:0:0:0:0:0:0:1 - - [14/Aug/2018:22:26:34 -0300] "GET /rest/cursos/3 HTTP/1.1" 415 1048 http-bio-9090-exec-2 66
+0:0:0:0:0:0:0:1 - - [14/Aug/2018:22:26:46 -0300] "GET /rest/cursos/3 HTTP/1.1" 415 1048 http-bio-9090-exec-3 4
+0:0:0:0:0:0:0:1 - - [14/Aug/2018:22:26:56 -0300] "GET /rest/cursos HTTP/1.1" 200 606 http-bio-9090-exec-4 753
+0:0:0:0:0:0:0:1 - - [14/Aug/2018:22:27:43 -0300] "GET /rest/cursos/3 HTTP/1.1" 200 93 http-bio-9090-exec-5 50
+0:0:0:0:0:0:0:1 - - [14/Aug/2018:22:27:52 -0300] "GET /rest/cursos/3 HTTP/1.1" 200 93 http-bio-9090-exec-6 14
+0:0:0:0:0:0:0:1 - - [14/Aug/2018:22:28:23 -0300] "PUT /rest/cursos/3 HTTP/1.1" 500 10632 http-bio-9090-exec-7 124
+0:0:0:0:0:0:0:1 - - [14/Aug/2018:22:28:28 -0300] "PUT /rest/cursos/3 HTTP/1.1" 500 10632 http-bio-9090-exec-9 21
+0:0:0:0:0:0:0:1 - - [14/Aug/2018:22:28:56 -0300] "PATCH /rest/cursos/3 HTTP/1.1" 200 93 http-bio-9090-exec-1 41
+0:0:0:0:0:0:0:1 - - [14/Aug/2018:22:29:03 -0300] "GET /rest/cursos/3 HTTP/1.1" 200 93 http-bio-9090-exec-1 14
