@@ -11,4 +11,23 @@ public class DetalheErro implements Serializable{
 	private String path;
 	
 	
+	public Integer getStatusCode() {
+		return statusCode;
+	}
+	public String getStatusMessage() {
+		return statusMessage;
+	}
+	public String getHttpMethod() {
+		return httpMethod;
+	}
+	public String getErro() {
+		return erro;
+	}
+	public String getDetalhe() {
+		return detalhe;
+	}
+	public String getPath() {
+		return path;
+	}
+	
 }
