@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.lph.domain.Curso;
 
+
 @Repository
 public class CursoDaoImpl implements CursoDao {
 	
@@ -29,7 +30,7 @@ public class CursoDaoImpl implements CursoDao {
 
 	@Override
 	public void delete(Long id) {
-		entityManager.detach(entityManager.getReference(Curso.class, id));
+		entityManager.remove(entityManager.getReference(Curso.class, id));
 		
 	}
 

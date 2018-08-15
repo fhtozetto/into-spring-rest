@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,21 +32,27 @@ public class CursoRestController {
 	@Autowired
 	private CursoService service;
 	
+	@DeleteMapping("/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void excluir(@PathVariable("id") Long id) {
+		service.delete(id);
+	}
+	
 	@PatchMapping("/{id}")
-	private Curso editarDataInicio(@PathVariable("id") Long id, @RequestBody Curso curso) {
+	public Curso editarDataInicio(@PathVariable("id") Long id, @RequestBody Curso curso) {
 		return service.updateDataInicio(id, curso.getDataInicio());
 	}
 	
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	private Curso editar(@PathVariable("id") Long id, @RequestBody Curso curso) {
+	public Curso editar(@PathVariable("id") Long id, @RequestBody Curso curso) {
 		service.update(id, curso);
 		return curso;
 	}
 	
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	private Curso getCurso(@PathVariable("id") Long id) {
+	public Curso getCurso(@PathVariable("id") Long id) {
 		return service.findById(id);
 	}
 	
