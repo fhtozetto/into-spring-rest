@@ -3,6 +3,7 @@ package br.com.lph.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
@@ -31,7 +32,11 @@ public class CursoDaoImpl implements CursoDao {
 
 	@Override
 	public void delete(Long id) {
+		try {
 		entityManager.remove(entityManager.getReference(Curso.class, id));
+		} catch (EntityNotFoundException ex) {
+			throw new NaoExisteDaoException("Curso id: "+id+" não encontrado.");
+		}
 		
 	}
 
