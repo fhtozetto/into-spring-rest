@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import br.com.lph.domain.Curso;
+import br.com.lph.exception.NaoExisteDaoException;
 
 
 @Repository
@@ -36,7 +37,11 @@ public class CursoDaoImpl implements CursoDao {
 
 	@Override
 	public Curso findById(Long id) {
-		return entityManager.find(Curso.class, id);
+		Curso curso = entityManager.find(Curso.class, id);
+		if (curso == null) {
+			throw new NaoExisteDaoException("Curso id: "+id+" não encontrado.");
+		}
+		return curso;
 	}
 
 	@Override

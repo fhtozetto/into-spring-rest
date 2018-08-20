@@ -6,6 +6,7 @@ D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\domain\C
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\service\CursoServiceImpl.java
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\config\SpringInitConfig.java
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\domain\DetalheErro.java
+D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\resource\exception\RestExceptionHandler.java
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\service\CursoService.java
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\dao\CursoDaoImpl.java
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\resource\rest\CursoRestController.java
