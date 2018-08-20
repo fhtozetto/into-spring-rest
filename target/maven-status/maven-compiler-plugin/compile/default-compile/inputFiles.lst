@@ -1,5 +1,6 @@
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\config\SpringRootConfig.java
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\dao\CursoDao.java
+D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\exception\IdNaoValidoServiceException.java
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\service\CursoServiceImpl.java
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\domain\DetalheErro.java
 D:\TI\Exercicios\Java\Eclipse\into-spring-rest\src\main\java\br\com\lph\resource\exception\RestExceptionHandler.java

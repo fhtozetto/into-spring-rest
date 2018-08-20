@@ -10,11 +10,24 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import br.com.lph.domain.DetalheErro;
+import br.com.lph.exception.IdNaoValidoServiceException;
 import br.com.lph.exception.NaoExisteDaoException;
 
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler{
 	
+	@ExceptionHandler({IdNaoValidoServiceException.class})
+	public ResponseEntity<Object> idInvalido(IdNaoValidoServiceException ex, WebRequest request) {
+		
+		return handleExceptionInternal(
+				ex, DetalheErro.builder()
+						.addErro(ex.getMessage())
+						.addStatus(HttpStatus.BAD_REQUEST)
+						.addHttpMethod(getHttpMethod(request))
+						.addPath(getPath(request))
+						.build(),
+				new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+	}
 	
 	@ExceptionHandler({org.hibernate.exception.ConstraintViolationException.class})
 	public ResponseEntity<Object> propriedadeNula(org.hibernate.exception.ConstraintViolationException ex, WebRequest request) {
