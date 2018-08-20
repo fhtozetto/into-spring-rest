@@ -15,6 +15,20 @@ import br.com.lph.exception.NaoExisteDaoException;
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler{
 	
+	@ExceptionHandler({org.hibernate.PropertyValueException.class})
+	public ResponseEntity<Object> propriedadeNula(org.hibernate.PropertyValueException ex, WebRequest request) {
+		
+		return handleExceptionInternal(
+				ex, DetalheErro.builder()
+						.addDetalhe("O atributo '"+ex.getPropertyName()+"' não pode ser nulo.")
+						.addErro(ex.getMessage())
+						.addStatus(HttpStatus.BAD_REQUEST)
+						.addHttpMethod(getHttpMethod(request))
+						.addPath(getPath(request))
+						.build(),
+				new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+	}
+	
 	@ExceptionHandler({NaoExisteDaoException.class})
 	public ResponseEntity<Object> entidadeNaoEncontrada(RuntimeException ex, WebRequest request) {
 		
