@@ -15,6 +15,21 @@ import br.com.lph.exception.NaoExisteDaoException;
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler{
 	
+	
+	@ExceptionHandler({org.hibernate.exception.ConstraintViolationException.class})
+	public ResponseEntity<Object> propriedadeNula(org.hibernate.exception.ConstraintViolationException ex, WebRequest request) {
+		
+		return handleExceptionInternal(
+				ex, DetalheErro.builder()
+						.addDetalhe("Constraint violada "+ex.getConstraintName())
+						.addErro(ex.getMessage())
+						.addStatus(HttpStatus.CONFLICT)
+						.addHttpMethod(getHttpMethod(request))
+						.addPath(getPath(request))
+						.build(),
+				new HttpHeaders(), HttpStatus.CONFLICT, request);
+	}
+	
 	@ExceptionHandler({org.hibernate.PropertyValueException.class})
 	public ResponseEntity<Object> propriedadeNula(org.hibernate.PropertyValueException ex, WebRequest request) {
 		
